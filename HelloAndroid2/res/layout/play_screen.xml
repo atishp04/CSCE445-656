@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".PlayScreen" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.58" >
+
+            <ImageView
+                android:id="@+id/center"
+                android:layout_width="250px"
+                android:layout_height="220px"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                />
+
+            <ImageView
+                android:id="@+id/left"
+                android:layout_width="300px"
+                android:layout_height="300px"
+                android:layout_above="@+id/button_back"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"/>
+
+            <ImageView
+                android:id="@+id/right"
+                android:layout_width="250px"
+                android:layout_height="220px"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/center"/>
+
+            <LinearLayout
+                android:id="@+id/boxToWrite"
+                android:layout_width="wrap_content"
+                android:layout_height="220px"
+                android:layout_alignLeft="@+id/right"
+                android:layout_below="@+id/right"
+                android:layout_toRightOf="@+id/center"
+                android:layout_marginLeft="196dp"
+                android:layout_marginTop="92dp"
+                android:orientation="vertical" >
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/button_next"
+                android:layout_width="200px"
+                android:layout_height="130px"
+                android:layout_below="@+id/boxToWrite"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/next_button" />
+
+            <ImageButton
+                android:id="@+id/button_back"
+                android:layout_width="200px"
+                android:layout_height="130px"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignRight="@+id/left"
+                android:src="@drawable/back_button" />
+		
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    
+
+</LinearLayout>

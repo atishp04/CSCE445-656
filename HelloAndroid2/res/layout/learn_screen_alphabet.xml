@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".PlayScreen" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.58" >
+
+            <ImageView
+                android:id="@+id/learn_center"
+                android:layout_width="250px"
+                android:layout_height="220px"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                />
+
+            <ImageView
+                android:id="@+id/learn_left"
+                android:layout_width="300px"
+                android:layout_height="300px"
+                android:layout_above="@+id/learn_button_back"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"/>
+
+            <ImageView
+                android:id="@+id/learn_right"
+                android:layout_width="250px"
+                android:layout_height="220px"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/learn_center"/>
+
+            <!--LinearLayout
+                android:id="@+id/learn_boxToWrite"
+                android:layout_width="wrap_content"
+                android:layout_height="220px"
+                
+                android:layout_below="@+id/learn_right"
+            	
+                android:layout_toRightOf="@+id/learn_center"
+                android:orientation="vertical" >
+                
+                
+            </LinearLayout-->
+            <LinearLayout
+                android:id="@+id/learn_boxToWrite"
+                android:layout_width="wrap_content"
+                android:layout_height="220px"
+                
+                android:layout_below="@+id/learn_right"
+            	
+                android:layout_toRightOf="@+id/learn_center"
+                android:orientation="vertical" >
+            
+			
+	
+	      <com.canvas.AnimationView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	       
+	       />
+	       </LinearLayout>
+            
+            <ImageButton
+                android:id="@+id/learn_button_next"
+                android:layout_width="200px"
+                android:layout_height="130px"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/learn_boxToWrite"
+                android:src="@drawable/next_button" />
+
+            <ImageButton
+                android:id="@+id/learn_button_back"
+                android:layout_width="200px"
+                android:layout_height="130px"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignRight="@+id/learn_left"
+                android:src="@drawable/back_button" />
+		
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    
+
+</LinearLayout>
