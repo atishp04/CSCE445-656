@@ -37,7 +37,8 @@ public class AnimationView extends View {
       super(context,attrs);
       setFocusable(true);
       java.io.InputStream is;
-      is = context.getResources().openRawResource(R.drawable.anim_b);
+//      is = context.getResources().openRawResource(R.drawable.anim_b);
+      is = context.getResources().openRawResource(R.drawable.a_trace);
       if (DECODE_STREAM) {
         mMovie = Movie.decodeStream(is);
       } else {

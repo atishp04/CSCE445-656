@@ -3,8 +3,8 @@ package com.canvas;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 
-import android.graphics.PointF;
 import android.util.Log;
 
 public class LipiTKJNIInterface {
@@ -33,10 +33,12 @@ public class LipiTKJNIInterface {
 		String line;
 		int temp;
 		String [] splited_line= null;
+		BufferedReader readIni = null;
 		try
 		{
 			File map_file = new File(project_config_dir+"unicodeMapfile_alphanumeric.ini");
-			BufferedReader readIni = new BufferedReader(new FileReader(map_file));
+//			BufferedReader readIni = new BufferedReader(new FileReader(map_file));
+			readIni = new BufferedReader(new FileReader(map_file)); //seriously, close your readers. JS
 			readIni.readLine();
 			readIni.readLine();
 			readIni.readLine();
@@ -59,6 +61,14 @@ public class LipiTKJNIInterface {
 		{
 			Log.d("JNI_LOG","Exception in getSymbolName Function"+ex.toString());
 			return "-1";
+		}finally{
+			if(readIni != null){
+				try {
+					readIni.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 		return "0";
 	}

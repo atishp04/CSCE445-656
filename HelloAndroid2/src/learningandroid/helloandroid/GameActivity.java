@@ -11,7 +11,8 @@ import android.widget.ImageView;
 
 public class GameActivity extends Activity {
 
-	public Integer[] gameMaps = { R.drawable.map_all, R.drawable.map_apple };
+//	public Integer[] gameMaps = { R.drawable.map_all, R.drawable.map_apple };
+	public Integer[] gameMaps = { R.drawable.overworld_title, R.drawable.overworld_1 };
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

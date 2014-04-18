@@ -2,16 +2,11 @@ package learningandroid.helloandroid;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
 import android.view.Menu;
 import android.view.View;
-import android.util.Log;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.BaseAdapter;
-import android.widget.Toast;
 
 public class LearnScreen extends Activity {
 
@@ -31,7 +26,7 @@ public class LearnScreen extends Activity {
 	    gridview.setAdapter(new ImageAdapter(this));
 
 	    gridview.setOnItemClickListener(new OnItemClickListener() {
-	        public void onItemClick(AdapterView parent, View v, int position, long id) {
+	        public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
 	        	Intent i = new Intent(getApplicationContext(), com.canvas.LearnScreenAlphabet.class);
                 // passing array index
                 i.putExtra("id", position);

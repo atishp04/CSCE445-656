@@ -5,33 +5,16 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Timer;
-import java.util.TimerTask;
 
-import com.canvas.PlayScreen.ProgressdialogClass;
-
-import android.R.color;
-import android.R.style;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Point;
 import android.graphics.PointF;
-import android.graphics.PorterDuff;
-import android.graphics.Rect;
 import android.os.CountDownTimer;
-import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Display;
-import android.view.KeyEvent;
 import android.view.MotionEvent;
-import android.view.WindowManager;
-
 import android.view.View;
 import android.view.View.OnTouchListener;
 
@@ -216,7 +199,7 @@ public class CanvasClass extends View implements OnTouchListener{
 				{
 					//canObj.backspace();
 				}
-				else if(XCood > (canObj.width - 30))
+				else if(XCood > (PlayScreen.width - 30))
 				{
 					
 					canObj.SpeakOutChoices();

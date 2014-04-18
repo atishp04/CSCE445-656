@@ -2,55 +2,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:padding="0dp"
     tools:context=".MainActivity" >
 
-    
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="false"
+        android:padding="0dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/title_screen" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_below="@+id/button1"
-        android:layout_marginTop="31dp"
-        android:shadowColor="#00ccff"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius="1.5"
-        android:text="@string/play"
-        android:typeface="monospace" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button2"
-        android:layout_below="@+id/button2"
-        android:layout_marginTop="26dp"
-        android:shadowColor="#00ccff"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius="1.5"
-        android:text="@string/start"
-        android:typeface="monospace" />
+    <!-- <Button -->
+    <!-- android:id="@+id/button3" -->
+    <!-- android:layout_width="100dp" -->
+    <!-- android:layout_height="wrap_content" -->
+    <!-- android:layout_alignLeft="@+id/button2" -->
+    <!-- android:layout_below="@+id/button2" -->
+    <!-- android:layout_marginTop="26dp" -->
+    <!-- android:shadowColor="#00ccff" -->
+    <!-- android:shadowDx="1" -->
+    <!-- android:shadowDy="1" -->
+    <!-- android:shadowRadius="1.5" -->
+    <!-- android:text="@string/start" -->
+    <!-- android:typeface="monospace" -->
+    <!-- /> -->
 
     <Button
         android:id="@+id/button1"
         style="@style/AppBaseTheme"
-        android:layout_width="100dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="71dp"
-        android:shadowColor="#00ccff"
-        android:shadowDx="1"
-        android:shadowDy="1"
-        android:shadowRadius="1.5"
-        android:text="@string/learn"
-        android:typeface="monospace" />
+        android:layout_marginTop="120dp"
+        android:background="@drawable/learn" />
 
     <ScrollView
         android:id="@+id/scrollView1"
@@ -59,8 +45,23 @@
         android:layout_alignParentRight="true"
         android:layout_below="@+id/button3"
         android:layout_marginRight="30dp" >
-
-        
     </ScrollView>
+
+    <Button
+        android:id="@id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView1"
+        android:layout_alignRight="@+id/imageView1"
+        android:background="@drawable/credits" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/play" />
 
 </RelativeLayout>

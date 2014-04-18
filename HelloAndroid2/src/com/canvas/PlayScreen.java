@@ -1,52 +1,29 @@
 package com.canvas;
 
-import java.io.BufferedReader;
-import java.io.DataInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 import learningandroid.helloandroid.GameActivity;
-import learningandroid.helloandroid.MainActivity;
 import learningandroid.helloandroid.R;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.Typeface;
-import android.inputmethodservice.InputMethodService;
-import android.opengl.Visibility;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.os.Vibrator;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.TextToSpeech.OnInitListener;
-import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.Display;
-import android.view.Gravity;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.HorizontalScrollView;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.Scroller;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.LinearLayout.LayoutParams;
 
 
 
@@ -184,7 +161,7 @@ public class PlayScreen extends Activity implements OnClickListener,OnLongClickL
 			handWLayout.removeView(canvasClass);
 			canvasClass = new CanvasClass(this,conObj);
 			handWLayout.setLayoutParams(new LinearLayout.LayoutParams(
-					LinearLayout.LayoutParams.FILL_PARENT, 
+					LinearLayout.LayoutParams.MATCH_PARENT, 
 					((height/2)+130)));
 			handWLayout.addView(canvasClass);
 		}
@@ -214,11 +191,11 @@ public class PlayScreen extends Activity implements OnClickListener,OnLongClickL
 		
 		
 		//detected text is set here
-		System.out.println("recognized character"+canvasClass.character[0]);
-		Toast.makeText(getApplicationContext(), canvasClass.character[0], Toast.LENGTH_LONG).show();
+		System.out.println("recognized character"+CanvasClass.character[0]);
+		Toast.makeText(getApplicationContext(), CanvasClass.character[0], Toast.LENGTH_LONG).show();
 		/*TV[0].setText(canvasClass.character[0]);
 		String str1 = TV[0].getText().toString();*/
-		mTts.speak(canvasClass.character[0], 0, null);
+		mTts.speak(CanvasClass.character[0], 0, null);
 		//HorizontalSV.setVisibility(View.VISIBLE);
 		if(canvasClass != null){
 			handWLayout.removeView(canvasClass);
@@ -242,7 +219,7 @@ public class PlayScreen extends Activity implements OnClickListener,OnLongClickL
 			handWLayout.removeView(canvasClass);
 			canvasClass = new CanvasClass(this,conObj);
 			handWLayout.setLayoutParams(new LinearLayout.LayoutParams(
-					LinearLayout.LayoutParams.FILL_PARENT, 
+					LinearLayout.LayoutParams.MATCH_PARENT, //don't use deprecated stuff. JS
 					((height/2)+130)));
 			handWLayout.addView(canvasClass);
 		}

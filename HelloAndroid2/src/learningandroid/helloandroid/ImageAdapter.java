@@ -33,7 +33,7 @@ public class ImageAdapter extends BaseAdapter {
         ImageView imageView;
         if (convertView == null) {  // if it's not recycled, initialize some attributes
             imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
+            imageView.setLayoutParams(new GridView.LayoutParams(120, 120));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
             imageView.setPadding(8, 8, 8, 8);
         } else {
@@ -47,10 +47,30 @@ public class ImageAdapter extends BaseAdapter {
     // references to our images
     public Integer[] mThumbIds = {
     		R.drawable.letter_a, R.drawable.letter_b,
+            R.drawable.letter_c, R.drawable.letter_d,
+            R.drawable.letter_a, R.drawable.letter_b,
+            R.drawable.letter_c, R.drawable.letter_d,
+            R.drawable.letter_a, R.drawable.letter_b,
+            R.drawable.letter_c, R.drawable.letter_d,
+            R.drawable.letter_a, R.drawable.letter_b,
+            R.drawable.letter_c, R.drawable.letter_d,
+            R.drawable.letter_a, R.drawable.letter_b,
+            R.drawable.letter_c, R.drawable.letter_d,
+            R.drawable.letter_a, R.drawable.letter_b,
             R.drawable.letter_c, R.drawable.letter_d
     };
     public Integer[] mThumbIds2 = {
     		R.drawable.letter_a, R.drawable.letter_b,
+            R.drawable.letter_c, R.drawable.letter_d,
+            R.drawable.letter_a, R.drawable.letter_b,
+            R.drawable.letter_c, R.drawable.letter_d,
+            R.drawable.letter_a, R.drawable.letter_b,
+            R.drawable.letter_c, R.drawable.letter_d,
+            R.drawable.letter_a, R.drawable.letter_b,
+            R.drawable.letter_c, R.drawable.letter_d,
+            R.drawable.letter_a, R.drawable.letter_b,
+            R.drawable.letter_c, R.drawable.letter_d,
+            R.drawable.letter_a, R.drawable.letter_b,
             R.drawable.letter_c, R.drawable.letter_d
     };
 }
