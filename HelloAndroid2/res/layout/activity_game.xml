@@ -15,16 +15,48 @@
         android:adjustViewBounds="false"
         android:padding="0px"
         android:scaleType="fitXY"
-        android:src="@drawable/overworld_title" />
+        android:src="@drawable/overworld_1" />
 
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:layout_marginBottom="5dp"
-        android:background="@drawable/button_blank"
+        android:layout_gravity="top|right"
+        android:layout_marginRight="70dp"
+        android:layout_marginTop="70dp"
+        android:background="@android:color/transparent"
+        android:shadowColor="#000000"
+        android:shadowDx="1"
+        android:shadowDy=".5"
+        android:shadowRadius=".5"
         android:text="Go!"
+        android:textColor="#ffffff"
+        android:textSize="75sp"
+        android:typeface="sans" />
+    
+    <ImageView 
+        android:id="@+id/pathImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adjustViewBounds="false"
+        android:padding="0px"
+        android:scaleType="fitXY"
+        android:src="@drawable/p_01" 
+        />
+    
+    <TextView
+        android:id="@+id/lvl_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:background="@android:color/transparent"
+        android:shadowColor="#000000"
+        android:shadowDx="0.5"
+        android:shadowDy="1"
+        android:shadowRadius="0.5"
+        android:text="@string/guide"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
         android:typeface="sans" />
 
 </FrameLayout>

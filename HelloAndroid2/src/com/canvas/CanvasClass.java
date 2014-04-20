@@ -56,7 +56,8 @@ public class CanvasClass extends View implements OnTouchListener{
 		setFocusable(true);
 		setFocusableInTouchMode(true);
 		this.setOnTouchListener(this);
-		globalvariable.paint.setColor(Color.RED);
+//		globalvariable.paint.setColor(Color.RED);
+		globalvariable.paint.setColor(Color.BLACK);
 		globalvariable.paint.setAntiAlias(true);
 		globalvariable.paint.setDither(true); 
 		globalvariable.paint.setStyle(Paint.Style.FILL); 
@@ -199,7 +200,7 @@ public class CanvasClass extends View implements OnTouchListener{
 				{
 					//canObj.backspace();
 				}
-				else if(XCood > (PlayScreen.width - 30))
+				else if(XCood > (canObj.width - 30))
 				{
 					
 					canObj.SpeakOutChoices();

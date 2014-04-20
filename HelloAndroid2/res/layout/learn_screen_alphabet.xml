@@ -17,7 +17,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dip"
             android:layout_weight="0.58" >
 
             <ImageView
@@ -25,8 +25,7 @@
                 android:layout_width="250px"
                 android:layout_height="220px"
                 android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                />
+                android:layout_centerHorizontal="true" />
 
             <ImageView
                 android:id="@+id/learn_left"
@@ -34,7 +33,7 @@
                 android:layout_height="300px"
                 android:layout_above="@+id/learn_button_back"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"/>
+                android:layout_alignParentTop="true" />
 
             <ImageView
                 android:id="@+id/learn_right"
@@ -42,9 +41,10 @@
                 android:layout_height="220px"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/learn_center"/>
+                android:layout_toRightOf="@+id/learn_center" />
 
-            <!--LinearLayout
+            <!--
+            LinearLayout
                 android:id="@+id/learn_boxToWrite"
                 android:layout_width="wrap_content"
                 android:layout_height="220px"
@@ -55,26 +55,22 @@
                 android:orientation="vertical" >
                 
                 
-            </LinearLayout-->
+            </LinearLayout
+            -->
+
             <LinearLayout
                 android:id="@+id/learn_boxToWrite"
                 android:layout_width="wrap_content"
                 android:layout_height="220px"
-                
                 android:layout_below="@+id/learn_right"
-            	
                 android:layout_toRightOf="@+id/learn_center"
                 android:orientation="vertical" >
-            
-			
-	
-	      <com.canvas.AnimationView
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	       
-	       />
-	       </LinearLayout>
-            
+
+                <com.canvas.AnimationView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
             <ImageButton
                 android:id="@+id/learn_button_next"
                 android:layout_width="200px"
@@ -91,11 +87,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignRight="@+id/learn_left"
                 android:src="@drawable/back_button" />
-		
         </RelativeLayout>
-
     </LinearLayout>
-
-    
 
 </LinearLayout>

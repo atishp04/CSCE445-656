@@ -3,16 +3,22 @@ package com.canvas;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 
+
+
+
+
+
+
+
 import learningandroid.helloandroid.R;
-
-
-
-
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Movie;
+import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 
 
@@ -34,21 +40,27 @@ public class AnimationView extends View {
     }
     
      public AnimationView(Context context,AttributeSet attrs) {
-      super(context,attrs);
-      setFocusable(true);
-      java.io.InputStream is;
-//      is = context.getResources().openRawResource(R.drawable.anim_b);
-      is = context.getResources().openRawResource(R.drawable.a_trace);
-      if (DECODE_STREAM) {
-        mMovie = Movie.decodeStream(is);
-      } else {
-        byte[] array = streamToBytes(is);
-        mMovie = Movie.decodeByteArray(array, 0, array.length);
-      }
+      this(context, attrs, R.drawable.trace_a);
     }
+     
+     public AnimationView(Context context, AttributeSet attrs, int iD){
+    	 super(context,attrs);
+    	 
+         setFocusable(true);
+         InputStream is;
+         is = context.getResources().openRawResource(iD);
+         if (DECODE_STREAM) {
+           mMovie = Movie.decodeStream(is);
+         } else {
+           byte[] array = streamToBytes(is);
+           mMovie = Movie.decodeByteArray(array, 0, array.length);
+         }
+     }
+     
     @Override
-    public void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {	
      long now = android.os.SystemClock.uptimeMillis();
+     
       if (mMovieStart == 0) { // first time
         mMovieStart = now;
       }

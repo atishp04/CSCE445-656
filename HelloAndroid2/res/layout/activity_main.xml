@@ -29,15 +29,6 @@
     <!-- android:typeface="monospace" -->
     <!-- /> -->
 
-    <Button
-        android:id="@+id/button1"
-        style="@style/AppBaseTheme"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="120dp"
-        android:background="@drawable/learn" />
-
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="wrap_content"
@@ -51,9 +42,16 @@
         android:id="@id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/imageView1"
         android:layout_alignRight="@+id/imageView1"
-        android:background="@drawable/credits" />
+        android:layout_alignTop="@+id/imageView1"
+        android:background="@android:color/transparent"
+        android:shadowColor="#00ccff"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="1.5"
+        android:text="credits"
+        android:textColor="#ffffff"
+        android:textSize="25sp" />
 
     <Button
         android:id="@+id/button2"
@@ -61,7 +59,73 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/button1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/play" />
+        android:layout_marginTop="20dp"
+        android:shadowColor="#000000"
+        android:shadowDx="0.5"
+        android:shadowDy="0.25"
+        android:shadowRadius="0.25"
+        android:text="Play!"
+        android:textColor="#ffffff"
+        android:textSize="45sp" />
+
+    <Button
+        android:id="@+id/mute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/scrollView1"
+        android:background="@android:color/transparent"
+        android:shadowColor="#00ccff"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="1.5"
+        android:text="| |"
+        android:textColor="#ffffff"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/mainTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:shadowColor="#000000"
+        android:shadowDx="1"
+        android:shadowDy="0.5"
+        android:shadowRadius="0.5"
+        android:text="Alphabet Adventures"
+        android:textColor="#ffff00"
+        android:textSize="100sp" />
+
+    <TextView
+        android:id="@+id/subTitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mainTitle"
+        android:layout_centerHorizontal="true"
+        android:shadowColor="#000000"
+        android:shadowDx="0.5"
+        android:shadowDy="0.25"
+        android:shadowRadius="0.25"
+        android:text="The Hungry Dragon"
+        android:textColor="#f5f5f5"
+        android:textSize="50sp" />
+
+    <Button
+        android:id="@+id/button1"
+        style="@style/AppBaseTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subTitle1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:shadowColor="#000000"
+        android:shadowDx="0.5"
+        android:shadowDy="0.25"
+        android:shadowRadius="0.25"
+        android:text="Learn"
+        android:textColor="#ffffff"
+        android:textSize="45sp" />
 
 </RelativeLayout>

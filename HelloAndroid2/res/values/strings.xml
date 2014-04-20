@@ -8,5 +8,7 @@
     <string name="play">Play</string>
     <string name="start">Start</string>
     <string name="title_activity_game">GameActivity</string>
+    <string name="rules">In the empty box, trace the right letter to give your dragon the food he wants.</string>
+    <string name="guide">Feed your hungry dragon to reach the castle!</string>
 
 </resources>

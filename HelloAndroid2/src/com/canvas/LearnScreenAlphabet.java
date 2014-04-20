@@ -34,7 +34,7 @@ public class LearnScreenAlphabet extends Activity {
 		//handWLayout.setBackgroundColor(Color.BLUE);
 		//handWLayout.setBackgroundResource(R.drawable.dino_left);
 		
-		center.setImageResource(R.drawable.thinking_b);
+		center.setImageResource(R.drawable.speech_b);
 		left.setImageResource(R.drawable.dino_left);
 		right.setImageResource(R.drawable.handwrite_b);
 		//next.setOnClickListener(this);
@@ -45,27 +45,27 @@ public class LearnScreenAlphabet extends Activity {
         int pos = i.getExtras().getInt("id");
         switch(pos){
         case 0 :
-        	center.setImageResource(R.drawable.thinking_b);
+        	center.setImageResource(R.drawable.speech_b);
     		left.setImageResource(R.drawable.dino_left);
     		right.setImageResource(R.drawable.handwrite_b);
     		break;
         case 1 :
-        	center.setImageResource(R.drawable.thinking_b);
-    		left.setImageResource(R.drawable.thinking_b);
-    		right.setImageResource(R.drawable.thinking_b);
+        	center.setImageResource(R.drawable.speech_b);
+    		left.setImageResource(R.drawable.speech_b);
+    		right.setImageResource(R.drawable.speech_b);
     		break;
         case 2 :
-        	center.setImageResource(R.drawable.thinking_b);
+        	center.setImageResource(R.drawable.speech_b);
     		left.setImageResource(R.drawable.dino_left);
     		right.setImageResource(R.drawable.handwrite_b);
     		break;
         case 3 :
-        	center.setImageResource(R.drawable.thinking_b);
+        	center.setImageResource(R.drawable.speech_b);
     		left.setImageResource(R.drawable.dino_left);
     		right.setImageResource(R.drawable.handwrite_b);
     		break;
         case 4 :
-        	center.setImageResource(R.drawable.thinking_b);
+        	center.setImageResource(R.drawable.speech_b);
     		left.setImageResource(R.drawable.dino_left);
     		right.setImageResource(R.drawable.handwrite_b);
     		break;

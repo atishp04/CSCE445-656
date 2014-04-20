@@ -1,5 +1,9 @@
 package com.canvas;
 
+import java.util.List;
+
+import android.graphics.PointF;
+import android.graphics.Matrix;
 
 public class Symbol {
 	private Stroke[] _strokes;
