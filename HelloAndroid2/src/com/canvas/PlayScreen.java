@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import learningandroid.helloandroid.GameActivity;
 import learningandroid.helloandroid.R;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -11,11 +12,13 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.LayerDrawable;
 import android.media.MediaPlayer;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.speech.tts.TextToSpeech;
+import android.speech.tts.UtteranceProgressListener;
 import android.speech.tts.TextToSpeech.OnInitListener;
 import android.util.Log;
 import android.view.Display;
@@ -25,12 +28,13 @@ import android.view.View.OnLongClickListener;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.graphics.PorterDuff;
 
 public class PlayScreen extends Activity implements OnClickListener,
 		OnLongClickListener {
-	private TextToSpeech myTts;
 	CanvasClass canClass;
 	private LinearLayout main;
 	private LinearLayout handWLayout;
@@ -68,6 +72,7 @@ public class PlayScreen extends Activity implements OnClickListener,
 	private Intent pass;
 	private boolean won = false;
 	private MediaPlayer match, mismatch;
+	RatingBar winingStarBar;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -97,7 +102,7 @@ public class PlayScreen extends Activity implements OnClickListener,
 		center = (ImageView) findViewById(R.id.center);
 		left = (ImageView) findViewById(R.id.left);
 		right = (GifMovieView) findViewById(R.id.right);
-
+		winingStarBar = (RatingBar) findViewById(R.id.ratingBar1);
 		// next = (ImageView) findViewById(R.id.button_next);
 		// back = (ImageView) findViewById(R.id.button_back);
 		back = (TextView) findViewById(R.id.button_back);
@@ -153,7 +158,9 @@ public class PlayScreen extends Activity implements OnClickListener,
 						// mTts.speak("Hello World", TextToSpeech.QUEUE_FLUSH,
 						// null);
 						mTts.setSpeechRate(0.75f);
-
+						mTts.setPitch(0.75f);
+						mTts.speak("Draw the letter feed the dragon", 0, null);
+						
 					}
 				});
 
@@ -166,6 +173,13 @@ public class PlayScreen extends Activity implements OnClickListener,
 				startService(installIntent);
 			}
 		}
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
 	public void onClick(View v) {
@@ -179,6 +193,7 @@ public class PlayScreen extends Activity implements OnClickListener,
 				pass = new Intent(this, GameActivity.class);
 				pass.putExtras(getIntent().getExtras());
 			}
+			finish();
 			startActivity(pass);
 		}
 		// //This is not currently in use. JS
@@ -228,11 +243,18 @@ public class PlayScreen extends Activity implements OnClickListener,
 		ProgressdialogClass ObjAsy = new ProgressdialogClass();
 		ObjAsy.execute();
 	}
-
+	
+	/*@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+		super.onStop();
+		mTts.shutdown();
+	}*/
+	
 	public void FreePadCall() {
 
 		// detected text is set here
-		System.out.println("recognized character" + canvasClass.character[0]);
+		System.out.println("recognized character: " + canvasClass.character[0]);
 //		Toast.makeText(getApplicationContext(), canvasClass.character[0],
 //				Toast.LENGTH_LONG).show();
 		/*
@@ -252,15 +274,56 @@ public class PlayScreen extends Activity implements OnClickListener,
 				won = true; // only advance the map if we haven't yet for this
 							// letter JS
 			}
+			// First play the character sound
+			mTts.speak(canvasClass.character[0], 0, null);
+			
+			mTts.setOnUtteranceProgressListener(new UtteranceProgressListener() {
+				
+				@Override
+				public void onStart(String utteranceId) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void onError(String utteranceId) {
+					// TODO Auto-generated method stub
+					
+				}
+				
+				@Override
+				public void onDone(String utteranceId) {
+					// TODO Auto-generated method stub
+					Log.i("Check", "tts sound play done");
+				}
+			});
+			
+			try {
+				Thread.sleep(900);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			LayerDrawable stars = (LayerDrawable) winingStarBar.getProgressDrawable();
+			stars.getDrawable(2).setColorFilter(Color.YELLOW, PorterDuff.Mode.SRC_ATOP);
+			winingStarBar.setVisibility(0);
 			match.start(); //play the win sound. JS
 			//TODO: This is where we would change the dragon image to happy. JS
-
+			
+			
 		} else {
+			LayerDrawable stars = (LayerDrawable) winingStarBar.getProgressDrawable();
+			stars.getDrawable(2).setColorFilter(Color.RED, PorterDuff.Mode.SRC_ATOP);
+			
+			winingStarBar.setVisibility(0);
+			back.setAlpha(0.33f);
+			back.setText("See Map");
+			won = false;
 			mismatch.start(); //play the lose sound. JS
 			//TODO: This is where we would change the dragon image to sad. JS
 		} 
 
-		mTts.speak(canvasClass.character[0], 0, null);
+		
 
 		if (canvasClass != null) {
 			handWLayout.removeView(canvasClass);
@@ -304,8 +367,8 @@ public class PlayScreen extends Activity implements OnClickListener,
 	}
 
 	protected void onDestroy() {
-		if (myTts != null) {
-			myTts.shutdown();
+		if (mTts != null) {
+			mTts.shutdown();
 		}
 		match.release();
 		mismatch.release();
@@ -346,6 +409,7 @@ public class PlayScreen extends Activity implements OnClickListener,
 		Log.v(PLAY_TAG, "Back button pressed");
 		if (pass == null)
 			pass = new Intent(this, GameActivity.class);
+		finish();
 		startActivity(pass);
 		super.onBackPressed();
 	}
@@ -358,10 +422,11 @@ public class PlayScreen extends Activity implements OnClickListener,
 		 */
 		if (back != null && !won) {
 			back.setAlpha(0.33f);
+			
 			back.setText("See Map");
 			won = false;
 		}
-
+		
 		super.onResume();
 	}
 
